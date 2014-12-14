@@ -1,0 +1,92 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-bottom: 220px;
+}
+
+
+.full-width {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.expand-height {
+	overflow-y: hidden;
+}
+
+.editor, .CodeMirror {
+	height: 300px;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+	background-color: #008cba;
+	color: #FFFFFF;
+}
+
+.console {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	padding: 10px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	white-space: pre-wrap;
+	color: #FFFFFF;
+	background-color: #111122;
+	overflow-y: scroll;
+}
+
+.console div {
+	word-wrap: break-word;
+}
+
+.console .log {
+	color: #999999;
+}
+
+.console .error {
+	color: #FF3333;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.console .warning {
+	color: #FFFF00;
+	font-style: italic;
+}
+
+.console .info {
+	color: #6699FF;
+}
+
+.variables {
+	width: 100%;
+}
+
+.variables .var_value {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	width: 300px;
+	cursor: pointer;
+}
+
+.variables [data-var-type="vec4"] .var_name:before {
+	content: "vec4 ";
+	font-weight: bold;
+	color: #666666;
+}
+ 
+.variables .var_value .number {
+	color: #000099;
+}
+ 
+.variables .var_value input {
+	display: inline;
+	width: 45px;
+}
