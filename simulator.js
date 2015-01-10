@@ -90,6 +90,21 @@ Simulator.prototype.compile = function(options) {
 };
 
 Simulator.prototype.run = function() {
+	
+	switch (this.target) {
+	
+		case 'fragment':
+		case 'x-fragment':
+		case 'x-shader/x-fragment':
+			this.program.fragment();
+			break;
+		
+		case 'vertex':
+		case 'x-vertex':
+		case 'x-shader/x-vertex':
+			this.program.vertex();
+			break;
+	}
 };
 
 
@@ -198,6 +213,10 @@ $().ready(function() {
 		
 		editors.intermediate.setValue(sim.getIntermediate());
 		editors.javascript.setValue(sim.getJavascript());
+	});
+
+	$('#btn-run').click(function() {		 
+		sim.run();
 	});
 
 	$('#shader-type').on('change', function() {
