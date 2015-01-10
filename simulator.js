@@ -56,8 +56,15 @@ Simulator.prototype.compile = function(options) {
 	compile_state = glsl.compile(this.source, options);	
 	end = new Date().getTime();
 
+	if (compile_state.getErrors().length) {
+		this.logError(compile_state.getErrors().join("\n"));		
+	}
+	
+	if (compile_state.getWarnings().length) {
+		this.logWarning(compile_state.getWarnings().join("\n"));		
+	}
+
 	if (!compile_state.getStatus()) {
-		this.logError(compile_state.getErrors().join("\n"));
 		return;
 	}
 
